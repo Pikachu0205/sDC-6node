@@ -107,7 +107,7 @@ function legalVote(lockset, height, round){	//找出大於cf+1張合法票的人
 		
 		//console.log("obj : " + obj[key]);
 		
-		if(obj[ahead] >= coefficient * fault + 1){
+		if(obj[ahead] >= threshold){
 			
 			//console.log("達到門檻");
 			//console.log("block[ahead2] : ");
