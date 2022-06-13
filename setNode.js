@@ -34,9 +34,11 @@ ID = parseInt(args[10]);
 
 global.mgdb
 
+console.log()
 
 //=====main=====		t 5f+1, m 3f+1
-node();
+node("TOs1 : " + TOs1);
+node("TOs2 : " + TOs2);
 
 
 
