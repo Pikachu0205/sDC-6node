@@ -155,7 +155,7 @@ function ReadyDeliver(ID, i){
 	else
 		mesDeliver(i, data);
 
-	console.log(ipList[i])
+	console.log("i : " + i + " : " + ipList[i])
 	console.log("傳READY");
 }
 
