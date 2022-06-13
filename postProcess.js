@@ -47,11 +47,11 @@ function isCommit(voteCollection){		//data = voteCollection[]		在S8-5./Vote
 				var nowTime = new Date().getTime();
 				console.log("commit好了  " + nowTime%1000000);
 				
-				if(testType == "to")		//準備測下一次的TO
+				if(testType == "to"){	//準備測下一次的TO
 					height = height - 1;
 					round = round - 1;
 					myDeliver.ReadyDeliver(ID, 0);	//0為編號為0的節點也為預備.1為開始
-				
+				}
 			}
 			else if(newHeightTogether == "ntoget"){		//測效率 中 好了就先進入下回合
 				
