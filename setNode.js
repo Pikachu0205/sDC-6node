@@ -76,38 +76,4 @@ function node(){
 	});
 	
 	
-	/*
-	MongoClient.connect("mongodb://localhost:27017/YourDB", {useNewUrlParser: true,useUnifiedTopology: true}, (err, client) => {
-		if (err) return console.log(err);
-		
-		db = client.db(port.toString());
-		db.createCollection('collection', function (err, collection){
-			
-			mgdb = collection;
-			
-			fs.readFile('key&url.txt', function(err, data) {
-				if (err) return console.log(err);
-				
-				readfile = data.toString().split('\n');
-				
-				
-				for(i=0; i < num_member; i++)
-					//awsUrlList[i] = readfile[i].replace(/[\r\n]/g,"");
-					ipList[i] = readfile[i].replace(/[\r\n]/g,"");
-				
-				privateKey = ec.keyFromPrivate( readfile[num_member + 100 + ID].replace(/[\r\n]/g,"") );
-				
-				for(i=0; i < num_member; i++)
-					publicKeyList[i] = readfile[num_num_member + i].replace(/[\r\n]/g,"");
-				
-				myDeliver.ReadyDeliver(ID, 0);
-				myRecord.endRecordTime_Of();
-				
-			});
-			
-		});
-		
-	});
-	*/
-	
 }
