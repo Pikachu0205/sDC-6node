@@ -31,9 +31,7 @@ function isCommit(voteCollection){		//data = voteCollection[]		在S8-5./Vote
 		if(commitBlock != null){
 			
 			//console.log("insert", commitBlock, "to DB");
-			
 			saveblock.push(height);	//紀錄已經commit了這個height的block
-			
 			//mgdb.insertOne(commitBlock);
 			
 			lastBlockHash = commitBlock.blockHash;
