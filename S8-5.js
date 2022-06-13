@@ -87,47 +87,6 @@ app.post('/Ready', function(req, res) {
 			}
 		}
 		
-		if(num_member == 6){
-			if(ID == 1)
-				setTimeout(function(){	myMain.newHeight(startRound);	},195);
-			if(ID == 2)
-				setTimeout(function(){	myMain.newHeight(startRound);	},100);
-			if(ID == 3)
-				setTimeout(function(){	myMain.newHeight(startRound);	},95);
-			if(ID == 4)
-				setTimeout(function(){	myMain.newHeight(startRound);	},150);
-			if(ID == 5)
-				setTimeout(function(){	myMain.newHeight(startRound);	},110);
-		}
-		
-		if(num_member == 11){
-			if(ID == 1)
-				setTimeout(function(){	myMain.newHeight(startRound);	},315);
-			if(ID == 2)
-				setTimeout(function(){	myMain.newHeight(startRound);	},315);
-			
-			if(ID == 3)
-				setTimeout(function(){	myMain.newHeight(startRound);	},195);
-			if(ID == 4)
-				setTimeout(function(){	myMain.newHeight(startRound);	},195);
-			
-			if(ID == 5)
-				setTimeout(function(){	myMain.newHeight(startRound);	},100);
-			if(ID == 6)
-				setTimeout(function(){	myMain.newHeight(startRound);	},100);
-			
-			if(ID == 7)
-				setTimeout(function(){	myMain.newHeight(startRound);	},95);
-			if(ID == 8)
-				setTimeout(function(){	myMain.newHeight(startRound);	},95);
-			
-			if(ID == 9)
-				setTimeout(function(){	myMain.newHeight(startRound);	},150);
-			if(ID == 10)
-				setTimeout(function(){	myMain.newHeight(startRound);	},150);
-			
-		}
-		
 	//}
 	
 	res.end();

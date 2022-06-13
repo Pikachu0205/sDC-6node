@@ -14,53 +14,11 @@ fs = require('fs');
 
 function firstBlock(){	//決定leader要送什麼block
 	
-	if(mode == "t"){
-		
-		/*
-		if(round != 1)
-			lastRoundBlock = maxVotesBlock(lastLockset, 2, fault);
-		
-		myDeliver.BlockDeliver(height, round, ID);
-		*/
-		//console.log("firstBlock");
-		
-		//看上一回合有沒有block是超過一定比例但沒有成功commit的
-		if(round != 1 && lastLockset.length >= coefficient * fault + 1)
-			lastRoundBlock = maxVotesBlock(lastLockset, 2, fault);
-		
-		myDeliver.BlockDeliver(height, round, ID);
-		
-		/*
-		if(round == 1)
-			myDeliver.BlockDeliver(height, round, ID);
-		
-		else if(lastLockset.length >= coefficient * fault + 1){
-			lastRoundBlock = maxVotesBlock(lastLockset, 2, fault);
-			myDeliver.BlockDeliver(height, round, ID);
-		}
-		
-		else
-			myDeliver.BlockDeliver(height, round, ID);
-		*/
-		
-	}
+	//看上一回合有沒有block是超過一定比例但沒有成功commit的
+	if(round != 1 && lastLockset.length >= coefficient * fault + 1)
+		lastRoundBlock = maxVotesBlock(lastLockset, 2, fault);
 	
-	if(mode == "m"){
-		
-		if(round == 1)
-			msigDeliver.leaderToWitDeliver(height, round, ID, witnessList);
-	
-		else if(lastLockset.length >= coefficient * fault + 1){
-			
-			//msig檢查票是不是都null
-			if( !msigProcedure.msigNull(lastLockset, height, round) )	
-				//如果不全為null.則票block的Round最大
-				lastRoundBlock = msigProcedure.msigMaxRoundVote(lastLockset);
-				
-			msigDeliver.leaderToWitDeliver(height, round, ID, witnessList);
-		}
-		
-	}
+	myDeliver.BlockDeliver(height, round, ID);
 	
 }
 

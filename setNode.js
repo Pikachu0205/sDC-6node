@@ -1,8 +1,7 @@
 //
 //node setNode.js t 11 2500 3750 5000 5 300000 0 0	//測量處理時間
 //node setNode.js t 11 2500 3750 5000 5 300000 agg tp toget 0 0
-//
-//
+//node setNode.js 2500 3750 5 300000 to toget max nAdv 0
 
 express = require('express');
 app = express();
@@ -20,22 +19,18 @@ height=0, round=0, fault=0, coefficient = 0, leader=0, aggregate=0;
 ipList = [], publicKeyList = [], witnessList = [], awsUrlList = [], awsUrl = 'abc';
 TO1 = 0, TO2 = 0, TimeRate = 1.1, threshold = 0;
 
-
-ID = parseInt(args[13]);
-mode = args[2];	//t : two step	m : msig
-num_member = parseInt(args[3]);
-TOs1 = parseInt(args[4]);
-TOs2 = parseInt(args[5]);
-dataSize = parseInt(args[6]);	//用來選擇不同大小的buffer
-testTime = parseInt(args[7]);	//實驗要跑多久
-testType = args[8];	//to : 測TO	tp : 測throught put	all : 兩個都測	
-newHeightTogether = args[9];	//toget	ntoget
-Advanced = parseInt(args[12]);	//不同DC設不同的TO
-TimeRate = parseFloat(args[10]);
-diff = parseInt(args[11]);
-
-
-
+//num_member = parseInt(args[2]);
+num_member = 6;
+TOs1 = parseInt(args[2]);
+TOs2 = parseInt(args[3]);
+dataSize = parseInt(args[4]);	//用來選擇不同大小的buffer
+testTime = parseInt(args[5]);	//實驗要跑多久
+testType = args[6];	//to : 測TO	tp : 測throught put	all : 兩個都測	
+newHeightTogether = args[7];	//toget	ntoget		用於postProcess、timeOut
+//TimeRate = parseFloat(args[8]);
+whichDiff = parseInt(args[8]);		//max	mean	95%
+Advanced = parseInt(args[9]);	//不同DC設不同的TO	nAdv:沒有	Adv:有
+ID = parseInt(args[10]);
 
 global.mgdb
 
@@ -58,22 +53,13 @@ function node(){
 		//console.log("threshold : " + threshold);
 		//threshold = coefficient * fault;
 	}
-	if(mode == "m"){
-		fault = (num_member-1)/3;
-		coefficient = 2;
-		threshold = coefficient * fault + 1;
-		//threshold = coefficient * fault;
-	}
 	
 	port = 3000;
 	app.listen(port);
 	
 	
 	
-	if(num_member == 6)
-		var readfile = 'traKey.txt'
-	else if(num_member == 11)
-		var readfile = 'key&url-11node.txt'
+	var readfile = 'key&url-6node-sameDC.txt'
 	
 	fs.readFile(readfile, function(err, data) {
 		if (err) return console.log(err);
