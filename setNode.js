@@ -44,15 +44,9 @@ function node(){
 	console.log(args);
 	var rfReady=0, rfpReady = 0; dbReady=0, awsReady=0;
 	
-	if(mode == "t"){
-		fault = (num_member-1)/5;
-		coefficient = 4;
-		threshold = coefficient * fault + 1;
-		//console.log("fault : " + fault);
-		//console.log("coefficient : " + coefficient);
-		//console.log("threshold : " + threshold);
-		//threshold = coefficient * fault;
-	}
+	fault = (num_member-1)/5;
+	coefficient = 4;
+	threshold = coefficient * fault + 1;
 	
 	port = 3000;
 	app.listen(port);
