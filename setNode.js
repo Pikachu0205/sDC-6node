@@ -27,10 +27,10 @@ dataSize = parseInt(args[4]);	//用來選擇不同大小的buffer
 testTime = parseInt(args[5]);	//實驗要跑多久
 testType = args[6];	//to : 測TO	tp : 測throught put	all : 兩個都測		用於postProcess myDeliver myRecord
 newHeightTogether = args[7];	//toget	ntoget		用於postProcess、timeOut
-//TimeRate = parseFloat(args[8]);
-whichDiff = args[8];		//max	mean	95%	- Adv才有用
-Advanced = args[9];	//不同DC設不同的TO	nAdv:沒有	Adv:有
-ID = parseInt(args[10]);
+TimeRate = parseFloat(args[8]);
+whichDiff = args[9];		//max	mean	95%	- Adv才有用
+Advanced = args[10];	//不同DC設不同的TO	nAdv:沒有	Adv:有
+ID = parseInt(args[11]);
 
 global.mgdb
 
