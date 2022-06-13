@@ -47,7 +47,8 @@ function node(){
 	
 	fault = (num_member-1)/5;
 	coefficient = 4;
-	threshold = coefficient * fault + 1;
+	//threshold = coefficient * fault + 1;
+	threshold = 1;
 	
 	port = 3000;
 	app.listen(port);
