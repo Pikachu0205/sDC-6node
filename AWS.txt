@@ -1,0 +1,188 @@
+11node	5個地區
+eddie12353@hotmail.com
+Pikachu0416&0205
+
+6node	6個地區
+12353eddie@gmail.com
+Pika0205&0416
+
+github
+12353eddie@gmail.com
+02Pikachu05
+
+資源使用量
+https://console.aws.amazon.com/billing/home?region=us-west-2#/freetier
+
+wsl的資料夾位子
+C:\Users\USER\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc\LocalState\rootfs
+C:\Users\BIU\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc\LocalState\rootfs
+C:\Users\BIU\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc\LocalState
+
+mnt跟usr都是rootfs底下的資料夾
+	修該權限到/usr/local這個資料夾
+		sudo chmod 400 ???.pem
+		
+	要先在一般情況下改滴在改到usr的資料夾去改到400
+	
+而連接windows的桌面是在mnt底下
+
+
+===== 剛開啟WSL後.連到window的桌面 =====c: = /mnt/c
+cd /mnt/c/Users/user/Desktop
+cd /mnt/c/Users/BIU/Desktop
+cd /mnt/c/Users/皮卡丘/Desktop
+
+ssh -i "bc1.pem" ec2-user@ec2-18-216-61-208.us-east-2.compute.amazonaws.com
+ssh -i "bc2.pem" ec2-user@ec2-3-16-45-231.us-east-2.compute.amazonaws.com
+ssh -i "bc3.pem" ec2-user@ec2-18-222-146-147.us-east-2.compute.amazonaws.com
+
+
+		__|  __|_  )
+		_|  (     /   Amazon Linux 2 AMI
+		___|\___|___|
+
+
+		
+===== 進入aws後 =====
+
+//安裝nvm要用的
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+
+//安裝nvm, 安裝node js要用的
+. ~/.nvm/nvm.sh
+
+//安裝node js版本12.14.1
+nvm install 12.14.1
+
+
+ 
+===== 安裝mongodb =====
+*****Install MongoDB Community Edition on Amazon Linux以下網址的標題
+*****https://docs.mongodb.com/manual/tutorial/install-mongodb-on-amazon/?fbclid=IwAR00nZAhsqgmxrh31KUKuDdUdjtirHjd5Y0k6M56eEl1rnMXpuv-AJnCaos
+
+//安裝mongodb.文件內容在上面的網址.注意檔名	//:wq存檔的意思
+sudo vi /etc/yum.repos.d/mongodb-org-4.4.repo
+
+//安裝mongodb
+sudo yum install -y mongodb-org
+
+
+
+//開啟mongoDB
+sudo service mongod start
+
+	Redirecting to /bin/systemctl start mongod.service		//成功
+
+//確認是否開啟
+systemctl status mongod.service
+	
+	● mongod.service - MongoDB Database Server
+		Loaded: loaded (/usr/lib/systemd/system/mongod.service; enabled; vendor preset: disabled)
+		Active: active (running) since 五 2020-01-17 04:24:50 UTC; 31s ago			//active成功
+		~
+	1月 17 04:24:50 ip-172-31-83-138.ec2.internal systemd[1]: Started MongoDB Database Server.
+
+
+
+
+
+
+
+
+
+
+===== 安裝&使用git =====
+
+sudo yum install git-all
+		Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+		amzn2-core                                                            | 3.7 kB  00:00:00
+		amzn2extra-docker                                                     | 3.0 kB  00:00:00
+		mongodb-org-4.4                                                       | 2.4 kB  00:00:00
+		Resolving Dependencies
+		--> Running transaction check
+		~
+		trousers.x86_64 0:0.3.14-2.amzn2.0.2
+
+	Complete!
+
+
+
+
+
+===== 把實驗從github下載到ec2 =====	
+git clone https://github.com/Pikachu0205/BC0525-TimeOut.git
+git clone https://github.com/Pikachu0205/dDC-11node.git
+git clone https://github.com/Pikachu0205/sDC-6node.git
+
+
+***** github使用說明 *****
+
+Personal access tokens : 
+	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
+
+
+
+*****在window之cmd建立git專案
+
+	//進到要上傳到github的資料夾位子後
+git init
+
+	//資料夾會出現一個.git.之後就可以將資料夾上傳到github
+git add -A
+git commit -m "輸入每個版本的說明文字"
+
+	//第一次上傳才要指定到哪個網址
+git remote add origin https://github.com/Pikachu0205/專案名稱.git
+
+
+git push -u origin master
+
+
+
+***** 之後有更新
+
+	//一樣進到資料夾
+git add -A
+git commit -m "更改描述"
+git push -u origin master
+
+	//下載
+git pull
+
+
+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
+
+
+=====新版連接github
+LINUX
+git config --global user.name "Pikachu0205"
+git config --global user.email "12353eddie@gmail.com"
+git config -l
+git clone https://github.com/Pikachu0205/dDC-11node
+
+WINDOW
+控制台
+新增
+
+
+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
+
+=====網頁關閉後
+Connection to 54.173.240.37 closed by remote host.
+	Connection to 54.173.240.37 closed.
+	guest-ii5q3l@pika-MS-7B47:~/下載$
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+node testTra.js	5 0
+	
+node setNode.js t 11 6000 12000 18000 5 600000 agg to toget 0
+node setNode.js t 11 2500 3750 5000 5 300000 nag tp toget 0
+node setNode.js t 6 1331.63 1650.69	 5000 5 300000 nag tp toget 0
