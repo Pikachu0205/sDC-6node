@@ -1,4 +1,4 @@
-11node	5個地區
+11node	5個地區	/	同一地區6node
 eddie12353@hotmail.com
 Pikachu0416&0205
 
@@ -18,6 +18,7 @@ C:\Users\USER\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_
 C:\Users\BIU\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc\LocalState\rootfs
 C:\Users\BIU\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc\LocalState
 
+
 mnt跟usr都是rootfs底下的資料夾
 	修該權限到/usr/local這個資料夾
 		sudo chmod 400 ???.pem
@@ -31,6 +32,7 @@ mnt跟usr都是rootfs底下的資料夾
 cd /mnt/c/Users/user/Desktop
 cd /mnt/c/Users/BIU/Desktop
 cd /mnt/c/Users/皮卡丘/Desktop
+cd /usr
 
 ssh -i "bc1.pem" ec2-user@ec2-18-216-61-208.us-east-2.compute.amazonaws.com
 ssh -i "bc2.pem" ec2-user@ec2-3-16-45-231.us-east-2.compute.amazonaws.com
